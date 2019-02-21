@@ -179,7 +179,7 @@ function (_React$Component) {
       return {
         left: "calc(50% - (".concat(this.props.slideWidth, "px / 2))"),
         position: 'relative',
-        margin: this.props.vertical ? "".concat(this.props.cellSpacing / 2 * -1, "px 0px") : "0px ".concat(this.props.cellSpacing / 2 * -1, "px"),
+        margin: this.props.vertical ? "".concat(this.props.cellSpacing / 2 * -1, "px 0px") : "".concat(this.props.slideListMargin, "px ").concat(this.props.cellSpacing / 2 * -1, "px"),
         padding: 0,
         height: this.props.vertical ? listWidth + spacingOffset : this.props.slideHeight,
         width: this.props.vertical ? 'auto' : '100%',
@@ -219,7 +219,8 @@ ScrollTransition3D.propTypes = {
   wrapAround: PropTypes.bool,
   zoomScale: PropTypes.number,
   opacityScale: PropTypes.number,
-  slidesToShow: PropTypes.number
+  slidesToShow: PropTypes.number,
+  slideListMargin: PropTypes.number
 };
 ScrollTransition3D.defaultProps = {
   cellSpacing: 0,
@@ -235,5 +236,6 @@ ScrollTransition3D.defaultProps = {
   wrapAround: true,
   zoomScale: 0.75,
   opacityScale: 0.65,
-  slidesToShow: 3
+  slidesToShow: 3,
+  slideListMargin: 10
 };
