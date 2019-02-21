@@ -78,12 +78,14 @@ function (_React$Component) {
       var _props = this.props,
           top = _props.top,
           left = _props.left,
+          currentSlide = _props.currentSlide,
           slidesToShow = _props.slidesToShow;
       var positionValue = this.props.vertical ? top : left;
       return React.Children.map(children, function (child, index) {
         var visible = _this2.getDistanceToCurrentSlide(index) <= slidesToShow / 2;
+        var current = currentSlide === index;
         return React.createElement("li", {
-          className: "slider-slide".concat(visible ? ' slide-visible' : ''),
+          className: "slider-slide".concat(visible ? ' slide-visible' : '').concat(current ? ' slide-current' : ''),
           style: _this2.getSlideStyles(index, positionValue),
           key: index
         }, child);
