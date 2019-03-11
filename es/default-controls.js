@@ -8,9 +8,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 import React from 'react';
 
@@ -35,7 +39,7 @@ function (_React$Component) {
 
     _classCallCheck(this, PreviousButton);
 
-    _this = _possibleConstructorReturn(this, (PreviousButton.__proto__ || Object.getPrototypeOf(PreviousButton)).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PreviousButton).apply(this, arguments));
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -71,7 +75,7 @@ function (_React$Component2) {
 
     _classCallCheck(this, NextButton);
 
-    _this2 = _possibleConstructorReturn(this, (NextButton.__proto__ || Object.getPrototypeOf(NextButton)).apply(this, arguments));
+    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(NextButton).apply(this, arguments));
     _this2.handleClick = _this2.handleClick.bind(_assertThisInitialized(_this2));
     _this2.nextButtonDisable = _this2.nextButtonDisabled.bind(_assertThisInitialized(_this2));
     return _this2;
@@ -121,12 +125,12 @@ function (_React$Component2) {
   }, {
     key: "render",
     value: function render() {
-      var _props = this.props,
-          wrapAround = _props.wrapAround,
-          slidesToShow = _props.slidesToShow,
-          currentSlide = _props.currentSlide,
-          cellAlign = _props.cellAlign,
-          slideCount = _props.slideCount;
+      var _this$props = this.props,
+          wrapAround = _this$props.wrapAround,
+          slidesToShow = _this$props.slidesToShow,
+          currentSlide = _this$props.currentSlide,
+          cellAlign = _this$props.cellAlign,
+          slideCount = _this$props.slideCount;
       var disabled = this.nextButtonDisabled({
         wrapAround: wrapAround,
         slidesToShow: slidesToShow,
@@ -153,7 +157,7 @@ function (_React$Component3) {
   function PagingDots() {
     _classCallCheck(this, PagingDots);
 
-    return _possibleConstructorReturn(this, (PagingDots.__proto__ || Object.getPrototypeOf(PagingDots)).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(PagingDots).apply(this, arguments));
   }
 
   _createClass(PagingDots, [{

@@ -14,9 +14,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -40,7 +44,7 @@ function (_React$Component) {
 
     _classCallCheck(this, Carousel);
 
-    _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Carousel).apply(this, arguments));
     _this.displayName = 'Carousel';
     _this.clickDisabled = false;
     _this.isTransitioning = false;
@@ -771,9 +775,9 @@ function (_React$Component) {
 
       var frame = this.frame;
 
-      var _calcSlideHeightAndWi = this.calcSlideHeightAndWidth(props),
-          slideHeight = _calcSlideHeightAndWi.slideHeight,
-          slideWidth = _calcSlideHeightAndWi.slideWidth;
+      var _this$calcSlideHeight = this.calcSlideHeightAndWidth(props),
+          slideHeight = _this$calcSlideHeight.slideHeight,
+          slideWidth = _this$calcSlideHeight.slideWidth;
 
       var frameHeight = slideHeight + props.cellSpacing * (slidesToShow - 1);
       var frameWidth = props.vertical ? frameHeight : frame.offsetWidth;
@@ -864,17 +868,17 @@ function (_React$Component) {
     value: function render() {
       var _this8 = this;
 
-      var _state = this.state,
-          currentSlide = _state.currentSlide,
-          slideCount = _state.slideCount,
-          frameWidth = _state.frameWidth;
-      var _props = this.props,
-          frameOverflow = _props.frameOverflow,
-          vertical = _props.vertical,
-          framePadding = _props.framePadding,
-          slidesToShow = _props.slidesToShow,
-          renderAnnounceSlideMessage = _props.renderAnnounceSlideMessage,
-          disableAnimation = _props.disableAnimation;
+      var _this$state = this.state,
+          currentSlide = _this$state.currentSlide,
+          slideCount = _this$state.slideCount,
+          frameWidth = _this$state.frameWidth;
+      var _this$props = this.props,
+          frameOverflow = _this$props.frameOverflow,
+          vertical = _this$props.vertical,
+          framePadding = _this$props.framePadding,
+          slidesToShow = _this$props.slidesToShow,
+          renderAnnounceSlideMessage = _this$props.renderAnnounceSlideMessage,
+          disableAnimation = _this$props.disableAnimation;
       var duration = this.state.dragging || this.state.resetWrapAroundPosition || disableAnimation || !this.state.hasInteraction ? 0 : this.props.speed;
       var frameStyles = getFrameStyles(frameOverflow, vertical, framePadding, frameWidth);
       var touchEvents = this.getTouchEvents();
